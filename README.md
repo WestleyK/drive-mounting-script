@@ -3,16 +3,15 @@ a script that mounts and unmounts usb drives
 
 #
 # ChangeLog:
-#
 
- --version 4.2-- mount_unmount_v4.2.sh
+# --version 4.2-- mount_unmount_v4.2.sh
    fixed version typo
    cleaned up script
    updated date code
    includes ChangeLog
    better title
 
- --version 4.1-- mount_unmount_v4.1.sh
+# --version 4.1-- mount_unmount_v4.1.sh
    now with date code 
    version typo in script its v4.0 but its v4.1
    includes case statment when replying
