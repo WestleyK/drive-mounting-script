@@ -119,7 +119,7 @@ esac
 # --version 2.6-- mount_unmount_v2.6.sh
 #   now with proper name
 #   more errers and safety features
-#   first standerd and usable version
+#   first stable and usable version
 
 # --version 2.5-- mounting_test_v2.5.sh
 #   now exits the script when theres nothing to mount or unmount
@@ -132,5 +132,4 @@ esac
 
 # --version 1.0-- mounting-test.sh
 #   initial release
-#   no number select
 
