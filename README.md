@@ -4,18 +4,19 @@ a script that mounts and unmounts usb drives
 #
 # ChangeLog:
 
+
 # --version 4.2-- mount_unmount_v4.2.sh
-   fixed version typo
-   cleaned up script
-   updated date code
-   includes ChangeLog
-   better title
+   fixed version typo  
+   cleaned up script  
+   updated date code  
+   includes ChangeLog  
+   better title  
 
 # --version 4.1-- mount_unmount_v4.1.sh
-   now with date code 
-   version typo in script its v4.0 but its v4.1
-   includes case statment when replying
-   reply without pushing enter
+   now with date code <br>
+   version typo in script its v4.0 but its v4.1 <br>
+   includes case statment when replying <br>
+   reply without pushing enter <br>
 
 # --version 2.8-- mount_unmount_v2.8.sh
 #   now mounts without having to use sudo when moving files
