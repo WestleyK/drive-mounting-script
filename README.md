@@ -1,9 +1,11 @@
 # drive-mounting-script
-a script that mounts and unmounts usb drives 
+a script that mounts and unmounts usb drives   
+made for and tested with raspberry pi  
+
 
 #
 # ChangeLog:
-
+#
 
 # --version 4.2-- mount_unmount_v4.2.sh
    fixed version typo  
@@ -13,29 +15,28 @@ a script that mounts and unmounts usb drives
    better title  
 
 # --version 4.1-- mount_unmount_v4.1.sh
-   now with date code <br>
-   version typo in script its v4.0 but its v4.1 <br>
-   includes case statment when replying <br>
-   reply without pushing enter <br>
+   now with date code  
+   version typo in script its v4.0 but its v4.1  
+   includes case statment when replying  
+   reply without pushing enter  
 
 # --version 2.8-- mount_unmount_v2.8.sh
-#   now mounts without having to use sudo when moving files
+   now mounts without having to use sudo when moving files  
 
 # --version 2.6-- mount_unmount_v2.6.sh
-#   now with proper name
-#   more errers and safety features
-#   first standerd and usable version
+   now with proper name  
+   more errers and safety features  
+   first standerd and usable version  
 
 # --version 2.5-- mounting_test_v2.5.sh
-#   now exits the script when theres nothing to mount or unmount
+   now exits the script when theres nothing to mount or unmount  
 
 # --version 2.3-- mounting_test_v2.3.sh
-#   with errer messages
+   with errer messages  
 
 # --version 1.1-- mounting-test_v1.1.sh
-#   number select
+   number select  
 
 # --version 1.0-- mounting-test.sh
-#   initial release
-#   no number select
+   initial release  
 
