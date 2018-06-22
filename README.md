@@ -29,6 +29,8 @@ For example, you want to mount the first option, so type `1` <br>
   
 ```
 $ ./mount-driver-vX.X.sh 
+https://github.com/WestleyK/drive-mounting-script
+
 
 
 1:/dev/sda1  *     8064 30277631 30269568 14.4G  c W95 FAT32 (LBA)
@@ -43,6 +45,8 @@ See, simple! :)
 
 ```
 $ ./mount-driver-v5.0.sh 
+https://github.com/WestleyK/drive-mounting-script
+
 
 
 1:/dev/sda1  *     8064 30277631 30269568 14.4G  c W95 FAT32 (LBA)
