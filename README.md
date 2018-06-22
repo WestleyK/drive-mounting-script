@@ -21,7 +21,10 @@ To uninstall just do: <br>
 Or you can run the script <br>
 `$ ./mount-driver-vX.X.sh` <br>	
 <br>
-Then select the number that corresponds with the drive you want to mount/unmount, <br>
+
+## User inerface:
+
+After you run the script or command you can select a number that corresponds with the drive, <br>
 For example, you want to mount the first option, so type `1` <br>
   
 ```
@@ -55,14 +58,16 @@ what would you like to mount or un-mount? [1-8]1
 <br>
 
 **Note:** By defalt the sctipt will mount to `/media/pi` <br>	
-You can easily change that in the script by changeing `mount_point=$"/media/pi"` on line 14 <br>
+You can easily change that in the script by changeing `mount_point=$"/media/pi"` <br>
 
 <br>
 
 
 ## More usage:
 
-for more usage and abilities, type: <br>
+For more usage and abilities, type: <br>
+`$ drive-mounter -help` <br>
+or for script: <br>
 `$ ./mount-driver-vX.X.sh -help` <br>
 
 <br>
