@@ -13,6 +13,8 @@
 # the mount point, feel free to change it :)
 mount_point=$"/media/pi"
 
+echo "https://github.com/WestleyK/drive-mounting-script"
+echo
 
 option=$1
 if [[ -n $option ]]; then 
