@@ -3,7 +3,7 @@
 # https://github.com/WestleyK/drive-mounting-script
 # Created by: Westley K
 # Date: Jun 22, 2018
-# version-5.0
+# version-1.0
 # Designed and tested on raspberry pi
 #
 
@@ -18,7 +18,7 @@ option=$1
 if [[ -n $option ]]; then 
 	case $option in
 		-h | -help)
-			echo "usage: ./mounter-driver-v5.0.sh [-option(s)]
+			echo "usage: driver-mounter [-option(s)]
 		-h | -help | --help (display help menu)
 		-a | -all (unmount all drives)
 		-d (display all drives, mounted or not)
@@ -40,7 +40,7 @@ if [[ -n $option ]]; then
 			re_mount=$"true"
 			;;
 		*)
-			echo "option not found, try: ./mounter-driver-v5.0.sh -help"
+			echo "option not found, try: drive-mounter -help"
 			exit
 			;;
 	esac
