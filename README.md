@@ -1,8 +1,8 @@
 
 # Simple script for mounting and un-mounting external drives
 
-A script that mounts and unmounts usb drives   
-Made for and tested with raspberry pi  
+A script that mounts and unmounts usb drives. <br>
+Made for and tested with raspberry pi. <br>
 
 <br>
 
@@ -10,13 +10,13 @@ Made for and tested with raspberry pi
 
 First download if you havent already: <br>
 `$ git clone https://github.com/WestleyK/drive-mounting-script.git` <br>
-Then you can put the `mount-driver-vX.X.sh` wherever you want, best in your home directory.	
-	
+Then you can put the `mount-driver-vX.X.sh` wherever you want, best in your home directory. <br>
+<br>
 Then you can run it! <br>
 `$ ./mount-driver-vX.X.sh` <br>	
-Then select the number that corresponds with the drive you want to mount/unmount,	
-	
-For example, you want to mount the first option, so type `1`
+<br>
+Then select the number that corresponds with the drive you want to mount/unmount, <br>
+For example, you want to mount the first option, so type `1` <br>
 ```
 $ ./mount-driver-vX.X.sh 
 
@@ -27,10 +27,8 @@ $ ./mount-driver-vX.X.sh
 what would you like to mount or un-mount? [1-8]
 ```
 <br>
-
 Then you can select to: `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
-See, simple! :)	
-
+See, simple! :)	<br>
 ```
 $ ./mount-driver-v5.0.sh 
 
@@ -47,15 +45,15 @@ what would you like to mount or un-mount? [1-8]1
 <br>
 
 **Note:** By defalt the sctipt will mount to `/media/pi` <br>	
-You can easily change that in the script by changeing `mount_point=$"/media/pi"` on line 14	
+You can easily change that in the script by changeing `mount_point=$"/media/pi"` on line 14 <br>
 
 <br>
 
 
 ## More usage:
 
-for more usage and abilities, type:	
-`$ ./mount-driver-vX.X.sh -help`	
+for more usage and abilities, type: <br>
+`$ ./mount-driver-vX.X.sh -help` <br>
 
 <br>
 
