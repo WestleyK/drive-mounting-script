@@ -17,7 +17,7 @@ Then you can run it! <br>
 <br>
 Then select the number that corresponds with the drive you want to mount/unmount, <br>
 For example, you want to mount the first option, so type `1` <br>
-<br>
+  
 ```
 $ ./mount-driver-vX.X.sh 
 
@@ -29,9 +29,9 @@ what would you like to mount or un-mount? [1-8]
 ```
 
 <br>
-Then you can select to: `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
+Then you can select to: `(m)mount, (u)un-mount or (r)remount?  [m,u,r]`  
 See, simple! :)	<br>
-<br>
+  
 ```
 $ ./mount-driver-v5.0.sh 
 
@@ -45,6 +45,7 @@ what would you like to mount or un-mount? [1-8]1
 
 (m)mount, (u)un-mount or (r)remount?  [m,u,r]
 ```
+
 <br>
 
 **Note:** By defalt the sctipt will mount to `/media/pi` <br>	
