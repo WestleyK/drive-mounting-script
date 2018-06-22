@@ -83,6 +83,11 @@ sudo chmod 777 drive-mounter
 sudo cp drive-mounter /usr/bin
 
 echo "installed!"
+echo
+echo "(drive-mounter) is installed."
+echo "try: drive-mounter -help (for help)"
+
+
 
 
 #
