@@ -8,7 +8,7 @@ Made for and tested with raspberry pi
 
 ## Quick start:
 
-first download if you havent already:	
+First download if you havent already:	
 `$ git clone https://github.com/WestleyK/drive-mounting-script.git` <br>
 Then you can put the `mount-driver-vX.X.sh` wherever you want, best in your home directory.	
 	
