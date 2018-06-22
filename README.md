@@ -4,7 +4,15 @@ made for and tested with raspberry pi
 
 <br>
 
-# ChangeLog:
+## How to install and use:
+
+Comming Soon!  
+also new update comming soon! 
+
+<br>
+
+
+## ChangeLog:
 
 <br>
 
@@ -49,3 +57,6 @@ made for and tested with raspberry pi
    initial release  
 <br>
 
+## End ChangeLog
+
+<br>
