@@ -8,10 +8,10 @@ Made for and tested with raspberry pi
 
 ## Quick start:
 
-`./mounter-driver-vX.X.sh`	
+`./mounter-driver-vX.X.sh` <br>	
 Then select the number that corresponds with the drive you want to mount/unmount,	
 	
-for example, you want to mount the first option, so type `1`	
+for example, you want to mount the first option, so type `1`
 ```
 pi@raspberrypi:~ $ ./mounter-driver-vX.X.sh 
 
@@ -23,7 +23,7 @@ what would you like to mount or un-mount? [1-8]
 ```
 <br>
 
-Then you can select to `(m)mount, (u)un-mount or (r)remount?  [m,u,r]`	
+Then you can select to `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
 See, simple! :)	
 
 ```
@@ -41,7 +41,7 @@ what would you like to mount or un-mount? [1-8]1
 ```
 <br>
 
-**note:** By defalt the sctipt will mount to `/media/pi`	
+**note:** By defalt the sctipt will mount to `/media/pi` <br>	
 You can easily change that in the script by changeing `mount_point=$"/media/pi"` on line 14	
 
 <br>
@@ -49,7 +49,7 @@ You can easily change that in the script by changeing `mount_point=$"/media/pi"`
 
 ## More usage:
 
-for more usage and ability, type:	
+for more usage and abilities, type:	
 `./mounter-driver-vX.X.sh -help`	
 
 <br>
