@@ -28,8 +28,9 @@ $ ./mount-driver-vX.X.sh
 what would you like to mount or un-mount? [1-8]
 ```
 <br>
-Then you can select to: `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
-See, simple! :)	<br>
+
+Then you can select to `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
+See, simple! :)  
 
 ```
 $ ./mount-driver-v5.0.sh 
