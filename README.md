@@ -12,11 +12,11 @@ First download if you havent already: <br>
 `$ git clone https://github.com/WestleyK/drive-mounting-script.git` <br>
 Then you can put the `mount-driver-vX.X.sh` wherever you want, best in your home directory.	
 	
-Then you can run it!	
+Then you can run it! <br>
 `$ ./mount-driver-vX.X.sh` <br>	
 Then select the number that corresponds with the drive you want to mount/unmount,	
 	
-for example, you want to mount the first option, so type `1`
+For example, you want to mount the first option, so type `1`
 ```
 $ ./mount-driver-vX.X.sh 
 
@@ -28,7 +28,7 @@ what would you like to mount or un-mount? [1-8]
 ```
 <br>
 
-Then you can select to `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
+Then you can select to: `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
 See, simple! :)	
 
 ```
@@ -46,7 +46,7 @@ what would you like to mount or un-mount? [1-8]1
 ```
 <br>
 
-**note:** By defalt the sctipt will mount to `/media/pi` <br>	
+**Note:** By defalt the sctipt will mount to `/media/pi` <br>	
 You can easily change that in the script by changeing `mount_point=$"/media/pi"` on line 14	
 
 <br>
