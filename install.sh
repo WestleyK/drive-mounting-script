@@ -38,7 +38,7 @@ fi
 
 echo "drive-mounter installer"
 echo "https://github.com/WestleyK/drive-mounting-script"
-echo "./install -help for help"
+echo "./install -help (for help)"
 echo
 
 
@@ -82,7 +82,7 @@ echo "installing..."
 sudo chmod 777 drive-mounter
 sudo cp drive-mounter /usr/bin
 
-echo "installed!
+echo "installed!"
 
 
 #
