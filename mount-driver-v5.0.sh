@@ -3,7 +3,7 @@
 # https://github.com/WestleyK/drive-mounting-script
 # Created by: Westley K
 # Date: Jun 22, 2018
-# version-5.0
+# version-5.1
 # Designed and tested on raspberry pi
 #
 
@@ -18,7 +18,7 @@ option=$1
 if [[ -n $option ]]; then 
 	case $option in
 		-h | -help)
-			echo "usage: ./mounter-driver-v5.0.sh [-option(s)]
+			echo "usage: ./mount-driver-v5.1.sh [-option]
 		-h | -help | --help (display help menu)
 		-a | -all (unmount all drives)
 		-d (display all drives, mounted or not)
@@ -40,7 +40,7 @@ if [[ -n $option ]]; then
 			re_mount=$"true"
 			;;
 		*)
-			echo "option not found, try: ./mounter-driver-v5.0.sh -help"
+			echo "option not found, try: ./mount-driver-v5.1.sh -help"
 			exit
 			;;
 	esac
@@ -84,10 +84,31 @@ if [[ $mount_drive == "true" ]]; then
 	fi
 	disk_loca=$( sudo fdisk -l | grep '^/dev/s' | cut -f 1 -d ' ' )
 	sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
-	echo "mounted to: /media/pi"
+	echo "mounted to: $mount_point"
 	exit
 fi
 
+
+if [[ $re_mount == "true" ]]; then 
+	drive_check=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' | wc -l )
+	if [[ $drive_check -eq "2" ]]; then
+		echo "only one drive can be present to use this feature."
+		exit
+	fi
+	drive_check=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' )
+	if [[ -z $drive_check ]]; then
+		echo "drive not mounted."
+		echo "try: drive-mounter -m"
+		exit
+	fi
+	disk_loca=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' )
+	sudo umount $disk_loca
+	sleep 0.1s
+	echo "mounting..."
+	sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
+	echo "mounted to: $mount_point"
+	exit
+fi
 
 
 echo
@@ -129,20 +150,17 @@ echo
 case $REPLY in
 	m)
 		echo "mounting..."
-		sleep 0.2s
 		sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
-		echo "mounted to: media/pi"
+		echo "mounted to: $mount_point"
 		exit
 		;;
 	M)
 		echo "mounting..."
-		sleep 0.2s
 		sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
-		echo "mounted to: media/pi"
+		echo "mounted to: $mount_point"
 		;;
 	u)
 		echo -n "un-mounting..."
-		sleep 0.2s
 		sudo umount $disk_loca
 		echo "un-mounted"
 		echo "done"
@@ -150,7 +168,6 @@ case $REPLY in
 		;;
 	U)
 		echo -n "un-mounting..."
-		sleep 0.2s
 		sudo umount $disk_loca
 		echo "un-mounted"
 		echo "done"
@@ -160,7 +177,7 @@ case $REPLY in
 		echo "remounting..."
 		sudo umount $disk_loca
 		echo -n "unmounted, "
-		sleep 0.2s
+		sleep 0.1s
 		echo -n "mounting..."
 		sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
 		echo "done"
@@ -170,10 +187,10 @@ case $REPLY in
 		echo "remounting..."
 		sudo umount $disk_loca
 		echo -n "unmounted, "
-		sleep 0.2s
+		sleep 0.1s
 		echo -n "mounting..."
 		sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
-		echo "mounted to: /media/pi"
+		echo "mounted to: $mount_point"
 		echo "done"
 		exit
 		;;
