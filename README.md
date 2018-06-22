@@ -8,12 +8,17 @@ Made for and tested with raspberry pi
 
 ## Quick start:
 
-`./mounter-driver-vX.X.sh` <br>	
+first download if you havent already:	
+`$ git clone https://github.com/WestleyK/drive-mounting-script.git` <br>
+Then you can put the `mount-driver-vX.X.sh` wherever you want, best in your home directory.	
+	
+Then you can run it!	
+`$ ./mounter-driver-vX.X.sh` <br>	
 Then select the number that corresponds with the drive you want to mount/unmount,	
 	
 for example, you want to mount the first option, so type `1`
 ```
-pi@raspberrypi:~ $ ./mounter-driver-vX.X.sh 
+$ ./mounter-driver-vX.X.sh 
 
 
 1:/dev/sda1  *     8064 30277631 30269568 14.4G  c W95 FAT32 (LBA)
@@ -27,7 +32,7 @@ Then you can select to `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
 See, simple! :)	
 
 ```
-pi@raspberrypi:~ $ ./mounter-driver-v5.0.sh 
+$ ./mounter-driver-v5.0.sh 
 
 
 1:/dev/sda1  *     8064 30277631 30269568 14.4G  c W95 FAT32 (LBA)
@@ -50,7 +55,7 @@ You can easily change that in the script by changeing `mount_point=$"/media/pi"`
 ## More usage:
 
 for more usage and abilities, type:	
-`./mounter-driver-vX.X.sh -help`	
+`$ ./mounter-driver-vX.X.sh -help`	
 
 <br>
 
