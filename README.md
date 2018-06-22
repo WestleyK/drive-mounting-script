@@ -17,6 +17,7 @@ Then you can run it! <br>
 <br>
 Then select the number that corresponds with the drive you want to mount/unmount, <br>
 For example, you want to mount the first option, so type `1` <br>
+
 ```
 $ ./mount-driver-vX.X.sh 
 
