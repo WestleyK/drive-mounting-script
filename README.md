@@ -12,7 +12,14 @@ First download if you havent already: <br>
 `$ git clone https://github.com/WestleyK/drive-mounting-script.git` <br>
 Then you can put the `mount-driver-vX.X.sh` wherever you want, best in your home directory. <br>
 <br>
-Then you can run it! <br>
+Then you can install the `drive-mounter` command: <br>
+`$ ./install` <br>
+Now you should be able to type `drive-mounter` insted of running the script. <br>
+<br>
+To uninstall just do: <br>
+`$ ./install -u` <br>
+<br>
+Or you can run the script <br>
 `$ ./mount-driver-vX.X.sh` <br>	
 <br>
 Then select the number that corresponds with the drive you want to mount/unmount, <br>
