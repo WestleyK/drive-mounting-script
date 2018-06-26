@@ -50,7 +50,7 @@ fi
 
 
 if [[ $un_mount_all == "true" ]]; then
-	disk_loca=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
+	disk_loca=$( df -aTh | grep '^/dev/s' | grep '/media/' | tail -1 | cut -f 1 -d ' ' )
 	if [[ -z $disk_loca ]]; then
 		echo "no disk(s) to un-mount :o"
 		exit
@@ -58,7 +58,7 @@ if [[ $un_mount_all == "true" ]]; then
 	while [[ -n $disk_loca ]]; do	
 		sudo umount $disk_loca &> /dev/null
 		echo "un-mounted: $disk_loca"
-		disk_loca=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
+		disk_loca=$( df -aTh | grep '^/dev/s' | grep '/media/' | tail -1 | cut -f 1 -d ' ' )
 	done
 	echo "done"
 	exit
