@@ -50,7 +50,7 @@ fi
 
 
 if [[ $un_mount_all == "true" ]]; then
-	disk_loca=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' )
+	disk_loca=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
 	if [[ -z $disk_loca ]]; then
 		echo "no disk(s) to un-mount :o"
 		exit
@@ -58,7 +58,7 @@ if [[ $un_mount_all == "true" ]]; then
 	while [[ -n $disk_loca ]]; do	
 		sudo umount $disk_loca &> /dev/null
 		echo "un-mounted: $disk_loca"
-		disk_loca=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' )
+		disk_loca=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
 	done
 	echo "done"
 	exit
@@ -67,7 +67,7 @@ fi
 
 
 if [[ $display_drive == "true" ]]; then 
-	what_to_mount=$( sudo fdisk -l | grep '^/dev/s' )
+	what_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' )
 	if [[ -n $what_to_mount ]]; then
 		sudo fdisk -l | grep '^/dev/s'
 		exit
@@ -79,12 +79,12 @@ fi
 
 
 if [[ $mount_drive == "true" ]]; then
-	drive_check=$( sudo fdisk -l | grep '^/dev/s' | cut -f 1 -d ' ' | wc -l )
+	drive_check=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' | wc -l )
 	if [[ $drive_check -eq "2" ]]; then
 		echo "theres more than one drive! nice try :P"
 		exit
 	fi
-	disk_loca=$( sudo fdisk -l | grep '^/dev/s' | cut -f 1 -d ' ' )
+	disk_loca=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
 	sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
 	echo "mounted to: $mount_point"
 	exit
@@ -92,18 +92,18 @@ fi
 
 
 if [[ $re_mount == "true" ]]; then 
-	drive_check=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' | wc -l )
+	drive_check=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' | wc -l )
 	if [[ $drive_check -eq "2" ]]; then
 		echo "only one drive can be present to use this feature."
 		exit
 	fi
-	drive_check=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' )
+	drive_check=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
 	if [[ -z $drive_check ]]; then
 		echo "drive not mounted."
 		echo "try: drive-mounter -m"
 		exit
 	fi
-	disk_loca=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' )
+	disk_loca=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
 	sudo umount $disk_loca
 	sleep 0.1s
 	echo "mounting..."
@@ -116,8 +116,8 @@ fi
 echo
 echo
 # check if theres anything to mount or unmount
-sudo fdisk -l | grep '^/dev/s' | grep -n 'dev/s'
-whats_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep -n 'dev/s' )
+sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s'
+whats_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s' )
 if [[ -z $whats_to_mount ]]; then
 	echo "there is nothing you can mount or un-mount"
 	echo
@@ -137,7 +137,7 @@ if [[ $REPLY != [1-8] ]]; then
 	exit
 fi
 # get the location of the disk
-disk_loca=$( sudo fdisk -l | grep '^/dev/s' | grep -n '/dev/s' | grep ^$REPLY | cut -f 1 -d ' ' | cut -c3- )
+disk_loca=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n '/dev/s' | grep ^$REPLY | cut -f 1 -d ' ' | cut -c3- )
 if [[ -z $disk_loca ]]; then 
 	echo
 	echo "WRONG MOVE!"
