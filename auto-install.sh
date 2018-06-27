@@ -2,14 +2,20 @@
 #
 # https://github.com/WestleyK/drive-mounting-script
 # Created by: Westley K
-# Date: Jun 22, 2018
-# version-1.0
+# Date: Jun 28, 2018
+# version-1.1-auto
 # Designed and tested on raspberry pi
 #
 # this install script must be runed as root or sudo
 # sudo ./install.sh
 
 
+# check if your root
+if [[ "$EUID" -ne 0 ]]; then 
+	echo "Please run as root"
+	echo "sudo ./auto-install.sh"
+	exit
+fi
 
 option=$1
 if [[ -n $option ]]; then
@@ -50,7 +56,7 @@ if [[ $un_install == "true" ]]; then
 		exit
 	fi
 	echo "are you sure you want to un-install drive-mounter"
-	echo -n "[y,n]"
+	echo -n "[y,n]:"
 	read input
 	echo
 	if [[ $input == "y" || $input == "Y" ]]; then
@@ -69,24 +75,43 @@ if [[ -n $check_script ]]; then
 	exit
 fi
 
-# check that the drive-mounter script is still here
-check_script=$( ls | grep drive-mounter )
-if [[ -z $check_script ]]; then 
-	echo "no script to install"
-	exit
+# is this raspberry pi?
+os_check=$( uname -a | grep 'raspberrypi' )
+if [[ -n $os_check ]]; then
+	# check if the script is still here
+	check_script=$( ls raspberry-pi | grep drive-mounter )
+	if [[ -z $check_script ]]; then 
+		echo "No script to install."
+		exit
+	fi
+	echo "Installing for raspberry pi..."
+
+	# the install part
+	sudo chmod 777 raspberry-pi/drive-mounter
+	sudo cp raspberry-pi/drive-mounter /usr/bin
+
+	echo "Installed!"
+	echo
+	echo "(drive-mounter) is installed."
+	echo "See: drive-mounter -help (for help)"
+else	
+	# check if the script is still here
+	check_script=$( ls linux-ubuntu | grep drive-mounter )
+	if [[ -z $check_script ]]; then 
+		echo "No script to install."
+		exit
+	fi
+	echo "Installing for linux/ubuntu..."
+
+	# the install part
+	chmod 777 linux-ubuntu/drive-mounter-root
+	cp linux-ubuntu/drive-mounter /usr/bin
+
+	echo "Installed!"
+	echo
+	echo "(drive-mounter) is installed."
+	echo "See: drive-mounter -help (for help)"
 fi
-
-echo "installing..."
-
-# the install part
-sudo chmod 777 drive-mounter
-sudo cp drive-mounter /usr/bin
-
-echo "installed!"
-echo
-echo "(drive-mounter) is installed."
-echo "try: drive-mounter -help (for help)"
-
 
 
 
