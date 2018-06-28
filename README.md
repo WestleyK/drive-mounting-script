@@ -23,9 +23,18 @@ Or for linux/ubuntu: <br>
 `$ ./linux-ubuntu/install.sh` <br>
 Use the root script if you are a root user. <br>
 <br>
-**Note**All the install script need to be ran with `sudo`, <br>
+**Note:**All the install script need to be ran with `sudo`, <br>
 Or if your `root`, then use the root install scripts. <br>
 <br>
+
+### Install manually:
+
+If you want to install manually: <br>
+
+```
+$ sudo chmod 777 [directory-to-the-script-you-want-to-install]/drive-mounter[-root]
+$ sudo cp [directory-to-the-script-you-want-to-install]/drive-mounter[-root] /usr/bin/
+```
 
 ## User inerface:
 
