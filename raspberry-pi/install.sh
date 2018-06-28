@@ -3,18 +3,17 @@
 # https://github.com/WestleyK/drive-mounting-script
 # Created by: Westley K
 # Date: Jun 28, 2018
-# version-1.0-linux-ubuntu-root
-# Designed and tested on ubuntu
+# version-1.0-raspberry-pi
+# Designed and tested on raspberry pi
 #
-# this install script must be runed as root
-# root$ ./install.sh
+# this install script must be runed as root or sudo
+# sudo ./install.sh
 
 
 # check if your root
 if [[ "$EUID" -ne 0 ]]; then 
 	echo "Please run as root"
-	echo "root$ ./install-root.sh"
-	echo "Or if your not root, try the non root install."
+	echo "sudo ./install.sh"
 	exit
 fi
 
@@ -62,7 +61,7 @@ if [[ $un_install == "true" ]]; then
 	echo
 	if [[ $input == "y" || $input == "Y" ]]; then
 		echo "un-installing..."
-		rm /usr/bin/drive-mounter
+		sudo rm /usr/bin/drive-mounter
 		echo "un-installed"
 		exit
 	fi
@@ -85,8 +84,8 @@ fi
 echo "Installing..."
 
 # the install part
-chmod 777 drive-mounter-root
-cp drive-mounter-root /usr/bin
+sudo chmod 777 drive-mounter
+sudo cp drive-mounter /usr/bin
 
 echo "Installed!"
 echo

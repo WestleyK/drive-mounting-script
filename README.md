@@ -15,26 +15,8 @@ Then you can install the `drive-mounter` command: <br>
 `$ ./auto-install.sh` <br>
 Now you should be able to type `drive-mounter` insted of running the script. <br>
 <br>
-Or the non-auto install script: <br>
-For raspberry pi: <br>
-`$ ./raspberry-pi/install.sh` <br>
+For more info <br>
 <br>
-Or for linux/ubuntu: <br>
-`$ ./linux-ubuntu/install.sh` <br>
-Use the root script if you are a root user. <br>
-<br>
-**Note:**All the install script need to be ran with `sudo`, <br>
-Or if your `root`, then use the root install scripts. <br>
-<br>
-
-### Install manually:
-
-If you want to install manually: <br>
-
-```
-$ sudo chmod 777 [directory-to-the-script-you-want-to-install]/drive-mounter[-root]
-$ sudo cp [directory-to-the-script-you-want-to-install]/drive-mounter[-root] /usr/bin/
-```
 
 ## User inerface:
 
@@ -104,6 +86,14 @@ Or `$ sudo vim /usr/bin/drive-mounter` if you already installed it. <br>
 For linux/ubuntu:`$ vim linux-ubuntu/drive-mounter`, or edit the root script if thats what you will use. <br>
 Or `$ sudo vim /usr/bin/drive-mounter` if you already instelled it. <br>
 
+<br>
+
+## Known bugs:
+
+cant uninstall `linux-ubuntu/drive-mounter-root` by script, <br>
+need sudo to write to usb drive (linux/ubuntu only) <br>
+
+<br>
 <br>
 
 
