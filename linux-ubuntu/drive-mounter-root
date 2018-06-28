@@ -25,7 +25,7 @@ option=$1
 if [[ -n $option ]]; then 
 	case $option in
 		-h | -help)
-			echo "usage: driver-mounter [-option(s)]
+			echo "usage: driver-mounter [-option]
 		-h | -help | --help (display help menu)
 		-a | -all (unmount all drives)
 		-d (display all drives, mounted or not)

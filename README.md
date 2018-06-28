@@ -2,7 +2,7 @@
 # Simple script for mounting and un-mounting external drives
 
 A script that mounts and unmounts usb drives. <br>
-Made for and tested with raspberry pi. <br>
+Made for and tested with raspberry pi and ubuntu. <br>
 
 <br>
 
@@ -12,14 +12,10 @@ First download if you havent already: <br>
 `$ git clone https://github.com/WestleyK/drive-mounting-script.git` <br>
 <br>
 Then you can install the `drive-mounter` command: <br>
-`$ ./install` <br>
+`$ ./auto-install.sh` <br>
 Now you should be able to type `drive-mounter` insted of running the script. <br>
 <br>
-To uninstall just do: <br>
-`$ ./install -u` <br>
-<br>
-Or you can run the script <br>
-`$ ./mount-driver-vX.X.sh` <br>	
+For more info <br>
 <br>
 
 ## User inerface:
@@ -28,7 +24,7 @@ After you run the script or command you can select a number that corresponds wit
 For example, you want to mount the first option, so type `1` <br>
   
 ```
-$ ./mount-driver-vX.X.sh 
+$ drive-mounter
 https://github.com/WestleyK/drive-mounting-script
 
 
@@ -44,7 +40,7 @@ Then you can select to `(m)mount, (u)un-mount or (r)remount?  [m,u,r]` <br>
 See, simple! :)  
 
 ```
-$ ./mount-driver-v5.0.sh 
+$ drive-mounter
 https://github.com/WestleyK/drive-mounting-script
 
 
@@ -59,23 +55,47 @@ what would you like to mount or un-mount? [1-8]1
 (m)mount, (u)un-mount or (r)remount?  [m,u,r]
 ```
 
+### Option menu:
+
+Here is all the options avalable:
+
+```
+$ drive-mounter -help
+	usage: driver-mounter [-option]
+-h | -help | --help (display help menu)
+-a | -all (unmount all drives)
+-d (display all drives, mounted or not)
+-m (mount drive only if there one)
+-p (temporally change the mount point when mounting drive) (defalt:/media/pi)
+-r (remount the drive, this only works if one drive is connected)
+```	
+
+<br>
 <br>
 
-**Note:** By defalt the sctipt will mount to `/media/pi` <br>	
-You can easily change that in the script by changeing `mount_point=$"/media/pi"` <br>
+### Changing the mount point:
+
+If you just want to change the mount point temporally: <br>
+Then do `$ drive-mounter -p`. Otherwise, the instructions are below. <br>
+<br>
+By defalt the sctipt will mount to `/media/pi` for raaspberry pi, and `/media/usb-drives` for linux/ubuntu. <br>	
+You can easily change this by editing the `driver-mounter`. <br>
+For raspberry pi:`$ vim raspberry-pi/drive-mounter`, then uninstall and reinstall. <br>
+Or `$ sudo vim /usr/bin/drive-mounter` if you already installed it. <br>
+<br>
+For linux/ubuntu:`$ vim linux-ubuntu/drive-mounter`, or edit the root script if thats what you will use. <br>
+Or `$ sudo vim /usr/bin/drive-mounter` if you already instelled it. <br>
 
 <br>
 
 
-## More usage:
+### More usage:
 
 For more usage and abilities, type: <br>
 `$ drive-mounter -help` <br>
-or for script: <br>
-`$ ./mount-driver-vX.X.sh -help` <br>
 
 <br>
-
+<br>
 
 
 

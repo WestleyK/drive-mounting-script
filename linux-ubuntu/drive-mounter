@@ -2,9 +2,9 @@
 #
 # https://github.com/WestleyK/drive-mounting-script
 # Created by: Westley K
-# Date: Jun 22, 2018
-# version-1.2-raspberry-pi
-# Designed and tested on raspberry pi
+# Date: Jun 28, 2018
+# version-1.0-ubuntu
+# Designed and tested on ubuntu
 #
 
 # 8 diffrent drives maxinum, NOT RECOMMENDED FOR MORE THEN ONE DRIVE!
@@ -13,7 +13,7 @@
 
 
 # the mount point, feel free to change it :)
-mount_point=$"/media/pi"
+mount_point=$"/media/usb-drives"
 
 
 
@@ -30,7 +30,7 @@ if [[ -n $option ]]; then
 		-a | -all (unmount all drives)
 		-d (display all drives, mounted or not)
 		-m (mount drive only if there one)
-		-p (temporally change the mount point when mounting drive) (defalt:/media/pi)
+		-p (temporally change the mount point when mounting drive) (defalt:/media/usb-drives)
 		-r (remount the drive, this only works if one drive is connected)"
 			exit
 			;;
@@ -64,7 +64,7 @@ if [[ $un_mount_all == "true" ]]; then
 		exit
 	fi
 	while [[ -n $disk_loca ]]; do	
-		sudo umount $disk_loca &> /dev/null
+		umount $disk_loca &> /dev/null
 		echo "Un-mounted: $disk_loca"
 		disk_loca=$( df -aTh | grep '^/dev/s' | grep '/media/' | tail -1 | cut -f 1 -d ' ' )
 	done
@@ -97,7 +97,7 @@ if [[ $mount_drive == "true" ]]; then
 		echo "There's nothing you can mount."
 		exit
 	fi
-	sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
+	sudo mount $disk_loca $mount_point 
 	echo "Mounted to: $mount_point"
 	exit
 fi
@@ -106,8 +106,8 @@ fi
 if [[ $tmp_mount_point == "true" ]]; then
 	echo
 	echo
-	sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s'
-	whats_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s' )
+	suod fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s'
+	whats_to_mount=$( fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s' )
 	if [[ -z $whats_to_mount ]]; then
 		echo "There is nothing you can mount or un-mount"
 		echo
@@ -145,10 +145,10 @@ if [[ $tmp_mount_point == "true" ]]; then
 	check_mount=$( df -aTh | grep $disk_loca | cut -f 1 -d ' ' )
 	if [[ -n $check_mount ]]; then
 		echo "Unmounting $disk_loca..."
-		sudo umount $disk_loca
+		umount $disk_loca
 		sleep 0.1s
 	fi
-	sudo mount $disk_loca $new_mount_point -o uid=pi,gid=pi
+	sudo mount $disk_loca $new_mount_point 
 	echo "$disk_loca mounted to $new_mount_point"
 	exit
 fi
@@ -167,14 +167,19 @@ if [[ $re_mount == "true" ]]; then
 		exit
 	fi
 	disk_loca=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
-	sudo umount $disk_loca
+	umount $disk_loca
 	sleep 0.1s
 	echo "Mounting..."
-	sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
+	sudo mount $disk_loca $mount_point 
 	echo "Mounted to: $mount_point"
 	exit
 fi
 
+if [[ ! -d $mount_point ]]; then
+	echo "$mount_point does not exist!"
+	echo "Creating $mount_point"
+	sudo mkdir $mount_point
+fi
 
 echo
 echo
@@ -215,24 +220,24 @@ echo
 case $REPLY in
 	m | M)
 		echo "Mounting..."
-		sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
+		sudo mount $disk_loca $mount_point 
 		echo "$disk_loca mounted to: $mount_point"
 		exit
 		;;
 	u | U)
 		echo -n "Un-mounting..."
-		sudo umount $disk_loca
+		umount $disk_loca
 		echo "Un-mounted $disk_loca"
 		echo "done"
 		exit
 		;;
 	r | R)
 		echo "Remounting..."
-		sudo umount $disk_loca
+		umount $disk_loca
 		echo -n "Unmounted, "
 		sleep 0.1s
 		echo -n "Mounting..."
-		sudo mount $disk_loca $mount_point -o uid=pi,gid=pi
+		sudo mount $disk_loca $mount_point 
 		echo "Done"
 		exit
 		;;

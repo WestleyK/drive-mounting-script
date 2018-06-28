@@ -3,17 +3,18 @@
 # https://github.com/WestleyK/drive-mounting-script
 # Created by: Westley K
 # Date: Jun 28, 2018
-# version-1.1-auto
-# Designed and tested on raspberry pi
+# version-1.0-linux-ubuntu
+# Designed and tested on ubuntu
 #
-# this install script must be runed as root or sudo
+# this install script must be ran with sudo
 # sudo ./install.sh
 
 
 # check if your root
 if [[ "$EUID" -ne 0 ]]; then 
 	echo "Please run as root"
-	echo "sudo ./auto-install.sh"
+	echo "sudo ./install.sh"
+	echo "Or if your root, try the root install."
 	exit
 fi
 
@@ -75,44 +76,22 @@ if [[ -n $check_script ]]; then
 	exit
 fi
 
-# is this raspberry pi?
-os_check=$( uname -a | grep 'raspberrypi' )
-if [[ -n $os_check ]]; then
-	# check if the script is still here
-	check_script=$( ls raspberry-pi | grep drive-mounter )
-	if [[ -z $check_script ]]; then 
-		echo "No script to install."
-		exit
-	fi
-	echo "Installing for raspberry pi..."
-
-	# the install part
-	sudo chmod 777 raspberry-pi/drive-mounter
-	sudo cp raspberry-pi/drive-mounter /usr/bin
-
-	echo "Installed!"
-	echo
-	echo "(drive-mounter) is installed!"
-	echo "See: drive-mounter -help (for help)"
-else	
-	# check if the script is still here
-	check_script=$( ls linux-ubuntu | grep drive-mounter )
-	if [[ -z $check_script ]]; then 
-		echo "No script to install."
-		exit
-	fi
-	echo "Installing for linux/ubuntu..."
-
-	# the install part
-	chmod 777 linux-ubuntu/drive-mounter-root
-	cp linux-ubuntu/drive-mounter /usr/bin
-
-	echo "Installed!"
-	echo
-	echo "(drive-mounter) is installed!"
-	echo "See: drive-mounter -help (for help)"
+# check if the script is still here
+check_script=$( ls raspberry-pi | grep drive-mounter )
+if [[ -z $check_script ]]; then 
+	echo "No script to install."
+	exit
 fi
+echo "Installing..."
 
+# the install part
+sudo chmod 777 drive-mounter
+sudo cp drive-mounter /usr/bin
+
+echo "Installed!"
+echo
+echo "(drive-mounter) is installed!"
+echo "See: drive-mounter -help (for help)"
 
 
 #
