@@ -17,7 +17,14 @@ Now you should be able to type `drive-mounter` insted of running the script. <br
 <br>
 Or the non-auto install script: <br>
 For raspberry pi: <br>
-`$ ./install raspberry-pi/install.sh` <br>
+`$ ./raspberry-pi/install.sh` <br>
+<br>
+Or for linux/ubuntu: <br>
+`$ ./linux-ubuntu/install.sh` <br>
+Use the root script if you are a root user. <br>
+<br>
+**Note**All the install script need to be ran with `sudo`, <br>
+Or if your `root`, then use the root install scripts. <br>
 <br>
 
 ## User inerface:
