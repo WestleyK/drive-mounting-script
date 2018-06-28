@@ -15,7 +15,9 @@ Then you can install the `drive-mounter` command: <br>
 `$ ./auto-install.sh` <br>
 Now you should be able to type `drive-mounter` insted of running the script. <br>
 <br>
-For more info <br>
+Or the non-auto install script: <br>
+For raspberry pi: <br>
+`$ ./install raspberry-pi/install.sh` <br>
 <br>
 
 ## User inerface:
