@@ -77,7 +77,7 @@ if [[ -n $check_script ]]; then
 fi
 
 # check if the script is still here
-check_script=$( ls raspberry-pi | grep drive-mounter )
+check_script=$( ls | grep drive-mounter )
 if [[ -z $check_script ]]; then 
 	echo "No script to install."
 	exit
