@@ -15,7 +15,7 @@ Then you can install the `drive-mounter` command: <br>
 `$ ./auto-install.sh` <br>
 Now you should be able to type `drive-mounter` insted of running the script. <br>
 <br>
-For more info on installing or un-installing, click [here] (#Install-and-uninstall). <br>
+For more info on installing or un-installing, click [here](#Install-and-uninstall). <br>
 <br>
 
 ## User inerface:
@@ -99,7 +99,7 @@ Or for linux/ubuntu, do: <br>
 For manual uninstall, do: <br>
 `$ sudo rm /usr/bin/drive-mounter` <br>
 <br>
-
+<br>
 
 ## Changing the mount point:
 
