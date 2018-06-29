@@ -90,8 +90,8 @@ Or `$ sudo vim /usr/bin/drive-mounter` if you already instelled it. <br>
 
 ## Known bugs:
 
-cant uninstall `linux-ubuntu/drive-mounter-root` by script, <br>
-need sudo to write to usb drive (linux/ubuntu only) <br>
+- cant uninstall `linux-ubuntu/drive-mounter-root` by script, have to uninstall manually. <br>
+- need sudo to write to usb drive (linux/ubuntu only) <br>
 
 <br>
 <br>
