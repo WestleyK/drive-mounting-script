@@ -15,7 +15,7 @@ Then you can install the `drive-mounter` command: <br>
 `$ ./auto-install.sh` <br>
 Now you should be able to type `drive-mounter` insted of running the script. <br>
 <br>
-For more info <br>
+For more info on installing or un-installing, click [here] (#Install-and-uninstall). <br>
 <br>
 
 ## User inerface:
@@ -55,7 +55,9 @@ what would you like to mount or un-mount? [1-8]1
 (m)mount, (u)un-mount or (r)remount?  [m,u,r]
 ```
 
-### Option menu:
+<br>
+
+## Option menu:
 
 Here is all the options avalable:
 
@@ -73,7 +75,33 @@ $ drive-mounter -help
 <br>
 <br>
 
-### Changing the mount point:
+
+## Install and uninstall:
+
+For quick install, do: <br>
+`$ ./auto-install.sh` <br>
+<br>
+For uninstall, do: <br>
+`$ ./auto-install.sh -u` <br>
+<br>
+
+### Manually install:
+
+For manual install, do: <br>
+`$ sudo chmod 777 raspberry-pi/drive-mounter && sudo cp -i raspberry-pi/drive-mounter /usr/bin/` for raspberry pi <br>
+<br>
+Or for linux/ubuntu, do: <br>
+`$ sudo chmod 777 linux-ubuntu/drive-mounter[-root] && sudo cp -i linux-ubuntu/drive-mounter[-root]` <br>
+<br>
+
+### Manuall uninstall:
+
+For manual uninstall, do: <br>
+`$ sudo rm /usr/bin/drive-mounter` <br>
+<br>
+
+
+## Changing the mount point:
 
 If you just want to change the mount point temporally: <br>
 Then do `$ drive-mounter -p`. Otherwise, the instructions are below. <br>
