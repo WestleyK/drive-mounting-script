@@ -20,7 +20,7 @@ For more info on installing or un-installing, click [here](#install-and-uninstal
 
 ## User inerface:
 
-After you run the script or command you can select a number that corresponds with the drive, <br>
+After you run the command you can select a number that corresponds with the drive, <br>
 For example, you want to mount the first option, so type `1` <br>
   
 ```
@@ -120,6 +120,7 @@ Or `$ sudo vim /usr/bin/drive-mounter` if you already instelled it. <br>
 
 - cant uninstall `linux-ubuntu/drive-mounter-root` by script, have to uninstall manually. <br>
 - need sudo to write to usb drive (linux/ubuntu only) <br>
+- "-d" option does not work properly for linux/ubuntu. <br>
 
 <br>
 <br>
