@@ -2,8 +2,8 @@
 #
 # https://github.com/WestleyK/drive-mounting-script
 # Created by: Westley K
-# Date: Jun 22, 2018
-# version-1.2-raspberry-pi
+# Date: Jul 4, 2018
+# version-1.3-raspberry-pi
 # Designed and tested on raspberry pi
 #
 
@@ -75,7 +75,7 @@ fi
 
 
 if [[ $display_drive == "true" ]]; then 
-	what_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' )
+	what_to_mount=$( sudo fdisk -l | grep '^/dev/s' )
 	if [[ -n $what_to_mount ]]; then
 		sudo fdisk -l | grep '^/dev/s'
 		exit
@@ -87,12 +87,12 @@ fi
 
 
 if [[ $mount_drive == "true" ]]; then
-	drive_check=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' | wc -l )
+	drive_check=$( sudo fdisk -l | grep '^/dev/s' | cut -f 1 -d ' ' | wc -l )
 	if [[ $drive_check -eq "2" ]]; then
 		echo "Theres more than one drive! nice try :P"
 		exit
 	fi
-	disk_loca=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
+	disk_loca=$( sudo fdisk -l | grep '^/dev/s' | cut -f 1 -d ' ' )
 	if [[  -z $disk_loca ]]; then
 		echo "There's nothing you can mount."
 		exit
@@ -106,8 +106,8 @@ fi
 if [[ $tmp_mount_point == "true" ]]; then
 	echo
 	echo
-	sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s'
-	whats_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s' )
+	sudo fdisk -l | grep '^/dev/s' | grep -n 'dev/s'
+	whats_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep -n 'dev/s' )
 	if [[ -z $whats_to_mount ]]; then
 		echo "There is nothing you can mount or un-mount"
 		echo
@@ -121,7 +121,7 @@ if [[ $tmp_mount_point == "true" ]]; then
 		echo "???"
 		exit
 	fi
-	disk_loca=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n '/dev/s' | grep ^$REPLY | cut -f 1 -d ' ' | cut -c3- )
+	disk_loca=$( sudo fdisk -l | grep '^/dev/s' | grep -n '/dev/s' | grep ^$REPLY | cut -f 1 -d ' ' | cut -c3- )
 	if [[ -z $disk_loca ]]; then 
 		echo
 		echo "WRONG MOVE!"
@@ -155,18 +155,18 @@ fi
 
 
 if [[ $re_mount == "true" ]]; then 
-	drive_check=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' | wc -l )
+	drive_check=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' | wc -l )
 	if [[ $drive_check -eq "2" ]]; then
 		echo "Only one drive can be present to use this feature.  :P"
 		exit
 	fi
-	drive_check=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
+	drive_check=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' )
 	if [[ -z $drive_check ]]; then
 		echo "Nothing you can re-mount."
 		echo "Try: drive-mounter -d (for drive list)"
 		exit
 	fi
-	disk_loca=$( df -aTh | grep '^/dev/s' | grep 'W95' | cut -f 1 -d ' ' )
+	disk_loca=$( df -aTh | grep '^/dev/s' | cut -f 1 -d ' ' )
 	sudo umount $disk_loca
 	sleep 0.1s
 	echo "Mounting..."
@@ -180,7 +180,7 @@ echo
 echo
 # check if theres anything to mount or unmount
 sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s'
-whats_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s' )
+whats_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep -n 'dev/s' )
 if [[ -z $whats_to_mount ]]; then
 	echo "There is nothing you can mount or un-mount"
 	echo
@@ -200,7 +200,7 @@ if [[ $REPLY != [1-8] ]]; then
 	exit
 fi
 # get the location of the disk
-disk_loca=$( sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n '/dev/s' | grep ^$REPLY | cut -f 1 -d ' ' | cut -c3- )
+disk_loca=$( sudo fdisk -l | grep '^/dev/s' | grep -n '/dev/s' | grep ^$REPLY | cut -f 1 -d ' ' | cut -c3- )
 if [[ -z $disk_loca ]]; then 
 	echo
 	echo "WRONG MOVE!"
