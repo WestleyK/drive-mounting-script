@@ -26,12 +26,12 @@ if [[ -n $option ]]; then
 	case $option in
 		-h | -help)
 			echo "usage: driver-mounter [-option]
-		-h | -help | --help (display help menu)
-		-a | -all (unmount all drives)
-		-d (display all drives, mounted or not)
-		-m (mount drive only if there one)
-		-p (temporally change the mount point when mounting drive) (defalt:/media/pi)
-		-r (remount the drive, this only works if one drive is connected)"
+	-h | -help | --help (display help menu)
+	-a | -all (unmount all drives)
+	-d (display all drives, mounted or not)
+	-m (mount drive only if there one)
+	-p (temporally change the mount point when mounting drive) (defalt:/media/pi)
+	-r (remount the drive, this only works if one drive is connected)"
 			exit
 			;;
 		-a | -all)
@@ -114,7 +114,7 @@ if [[ $tmp_mount_point == "true" ]]; then
 		exit
 	fi
 	echo
-	read -p "What would you like to mount? [1-8]:" -n 1 -r
+	read -p "What would you like to mount? [1-8]" -n 1 -r
 	echo
 	if [[ $REPLY != [1-8] ]]; then
 		echo
@@ -179,7 +179,7 @@ fi
 echo
 echo
 # check if theres anything to mount or unmount
-sudo fdisk -l | grep '^/dev/s' | grep 'W95' | grep -n 'dev/s'
+sudo fdisk -l | grep '^/dev/s' | grep -n 'dev/s'
 whats_to_mount=$( sudo fdisk -l | grep '^/dev/s' | grep -n 'dev/s' )
 if [[ -z $whats_to_mount ]]; then
 	echo "There is nothing you can mount or un-mount"
@@ -190,7 +190,7 @@ fi
 
 
 echo
-read -p "What would you like to mount or un-mount? [1-8]:" -n 1 -r
+read -p "What would you like to mount or un-mount? [1-8]" -n 1 -r
 # 8 maxinum diffrent drives
 echo
 if [[ $REPLY != [1-8] ]]; then
@@ -210,7 +210,7 @@ fi
 echo 
 echo $disk_loca
 echo
-read -p "(m)mount, (u)un-mount or (r)remount?  [m,u,r]:" -n 1 -r
+read -p "(m)mount, (u)un-mount or (r)remount?  [m,u,r]" -n 1 -r
 echo
 case $REPLY in
 	m | M)

@@ -2,8 +2,8 @@
 #
 # https://github.com/WestleyK/drive-mounting-script
 # Created by: Westley K
-# Date: Jun 28, 2018
-# version-1.1-auto
+# Date: Jul 4, 2018
+# version-1.2-auto
 # Designed and tested on raspberry pi
 #
 # this install script must be runed as root or sudo
@@ -12,8 +12,8 @@
 
 # check if your root
 if [[ "$EUID" -ne 0 ]]; then 
-	echo "Please run as root"
-	echo "sudo ./auto-install.sh"
+	echo "Please run as root!"
+	echo "$ sudo ./auto-install.sh"
 	exit
 fi
 
@@ -33,7 +33,6 @@ if [[ -n $option ]]; then
 			;;
 		-u)
 			un_install=$"true"
-			echo "un-installing"
 			;;
 		*)
 			echo "option not found :o try: ./install -help"
@@ -56,7 +55,7 @@ if [[ $un_install == "true" ]]; then
 		exit
 	fi
 	echo "are you sure you want to un-install drive-mounter"
-	echo -n "[y,n]:"
+	echo -n "[Y,n]"
 	read input
 	echo
 	if [[ $input == "y" || $input == "Y" ]]; then
@@ -71,7 +70,9 @@ fi
 # check if its installed aready
 check_script=$( ls /usr/bin | grep drive-mounter )
 if [[ -n $check_script ]]; then 
-	echo "it seems like its already installed"
+	echo "It seems like its already installed"
+	echo "For uninstall, try:"
+	echo "$ sudo ./auto-install -u"
 	exit
 fi
 
@@ -93,7 +94,9 @@ if [[ -n $os_check ]]; then
 	echo "Installed!"
 	echo
 	echo "(drive-mounter) is installed!"
-	echo "See: drive-mounter -help (for help)"
+	echo "Try:"
+	echo "$ drive-mounter -help (for help)"
+	exit
 else	
 	# check if the script is still here
 	check_script=$( ls linux-ubuntu | grep drive-mounter )
@@ -110,7 +113,9 @@ else
 	echo "Installed!"
 	echo
 	echo "(drive-mounter) is installed!"
-	echo "See: drive-mounter -help (for help)"
+	echo "Try:"
+	echo "$ drive-mounter -help (for help)"
+	exit
 fi
 
 
