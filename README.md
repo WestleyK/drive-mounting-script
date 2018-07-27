@@ -3,6 +3,9 @@
 
 A script that mounts and unmounts usb drives. <br>
 Made for and tested with raspberry pi and ubuntu. <br>
+<br>
+
+## Better script comming soon!
 
 <br>
 
