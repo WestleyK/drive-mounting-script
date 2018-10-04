@@ -1,7 +1,7 @@
 
-# Simple script for mounting and un-mounting external drives
+# A simple script for mounting and unmounting external drives.
 
-A script that mounts and unmounts usb drives. <br>
+A script that mounts and unmounts USB drives. <br>
 Made for and tested with raspberry pi and ubuntu. <br>
 <br>
 
@@ -11,19 +11,19 @@ Made for and tested with raspberry pi and ubuntu. <br>
 
 ## Quick start:
 
-First download if you havent already: <br>
+First download if you haven't already: <br>
 `$ git clone https://github.com/WestleyK/drive-mounting-script.git` <br>
 <br>
 Then you can install the `drive-mounter` command: <br>
 `$ ./auto-install.sh` <br>
 Now you should be able to type `drive-mounter` insted of running the script. <br>
 <br>
-For more info on installing or un-installing, click [here](#install-and-uninstall). <br>
+For more info on installing or uninstalling, click [here](#install-and-uninstall). <br>
 <br>
 
 ## User inerface:
 
-After you run the command you can select a number that corresponds with the drive, <br>
+After you run the command you can select a number that corresponds with the drive. <br>
 For example, you want to mount the first option, so type `1` <br>
   
 ```
@@ -62,7 +62,7 @@ what would you like to mount or un-mount? [1-8]1
 
 ## Option menu:
 
-Here is all the options avalable:
+Here are all the options avalable:
 
 ```
 $ drive-mounter -help
